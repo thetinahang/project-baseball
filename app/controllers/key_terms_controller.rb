@@ -1,0 +1,2 @@
+class KeyTermsController < ApplicationController
+end
