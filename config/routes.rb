@@ -5,8 +5,10 @@ Rails.application.routes.draw do
   resources :sessions, only: [:create]
 
   scope '/api' do
-  	resources :products do
-  		resources :key_terms
-  	end
+  	resources :users do 
+	  	resources :products do
+	  		resources :key_terms
+	  	end
+	 end
   end
 end
