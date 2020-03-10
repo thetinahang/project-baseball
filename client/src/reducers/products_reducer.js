@@ -1,13 +1,22 @@
-export default function productsReducer(state={
- 	loading: false,
- 	products: [],
- }, action) {
- 	switch ( action.type ) {
- 		case 'LOADING_PRODUCTS':
- 			return {...state, loading: true}
- 		case 'FETCH_PRODUCTS':
- 			return {loading: false, products: action.payload}
- 	default: 
- 		return state;
- 	}
-} 
+const productsReducer = (state = { products: [], loading: false}, action ) => {
+	switch(action.type) {
+		case 'LOADING_PRODUCTS':
+			return {
+				...state,
+				products: [...state.products],
+				loading: true
+			}
+
+		case 'FETCH_PRODUCTS':
+			return {
+				...state,
+				products: action.products,
+				loading: false
+			}
+
+		default: 
+			return state;
+	}
+}
+
+export default productsReducer;
