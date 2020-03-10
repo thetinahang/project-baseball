@@ -6,7 +6,7 @@ import thunk from 'redux-thunk';
 import rootReducer from './reducers';
 import './index.css';
 import App from './App';
-import * as serviceWorker from './serviceWorker';
+// import * as serviceWorker from './serviceWorker';
 
 //ReactDOM.render(<App />, document.getElementById('root'));//
 
@@ -20,6 +20,6 @@ const store = createStore(rootReducer, applyMiddleware(thunk));
 ReactDOM.render(
 	<Provider store={store} >
     	<App />,		 	
-    </Provider>,
-    document.getElementById('root')
+  </Provider>,
+  document.getElementById('root')
 );

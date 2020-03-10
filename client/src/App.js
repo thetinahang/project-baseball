@@ -1,36 +1,37 @@
-import React from 'react';
-import {Navbar} from 'react-bootstrap';
+import React, { Component } from 'react';
 import ProductList from './containers/ProductList';
 import { connect } from 'react-redux';
 import { fetchProducts } from './actions/productActions';
 
-function App() {
+class App extends Component {
 
   componentDidMount() {
+    console.log(this.props)
     this.props.fetchProducts()
   }
 
   render () {
+    console.log(this.props.products);
     return (
       <div className="App">
-        <Navbar>
-          <Navbar.Header>
-            <Navbar.Brand>
-              <ProductList products={this.props.products} />
-            </Navbar.Brand>
-          </Navbar.Header>
-        </Navbar>
+        <h1>Hello from the App file</h1>
+        <ProductList products={this.props.products} />
       </div>
-    ); 
+    ) 
   }
 }
 
 const mapStateToProps = state => {
-  return { products: state.products }
+  return { 
+    products: state.products,
+    loading: state.loading 
+  }
 }
 
 const mapDispatchToProps = dispatch => {
-  fetchProducts: fetchProducts()
+  return {
+    fetchProducts: () => dispatch(fetchProducts())
+  }
 }
 
-export default connect(mapStateToProps, {fetchProducts}) (App);
+export default connect(mapStateToProps, mapDispatchToProps) (App)

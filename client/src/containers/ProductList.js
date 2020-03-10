@@ -1,21 +1,17 @@
-import React from 'react'; 
+import React, { Component } from 'react'; 
 
-  const ProductList = (props) => {
- 	function listProducts() {
- 		return props.products.map((product, id) => {
- 			return (
- 				<div key={id}>
- 					<h1>{product.name}</h1>
- 				</div>
- 			)
- 		})
+class ProductList extends Component {
+ 	listProducts = () => {
+ 		console.log(this.props.products)
  	}
 
-  	return (
- 		<div>
- 			{listProducts()}
- 		</div>
- 	)
- }
+ 	render() {
+		return (
+	 		<div>
+	 			{this.listProducts()}
+	 		</div>
+	 	)
+	}
+}
 
 export default ProductList; 

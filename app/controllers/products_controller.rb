@@ -2,7 +2,6 @@ class ProductsController < ApplicationController
 
 	def index
 		@user = User.find(params[:user_id])
-		binding.pry
 		@products = @user.products
 		render json: ProductSerializer.new(@products).serialized_json
 	end
