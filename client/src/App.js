@@ -6,11 +6,13 @@ import { fetchProducts } from './actions/productActions';
 class App extends Component {
 
   componentDidMount() {
+    console.log('from mount')
     console.log(this.props)
     this.props.fetchProducts()
   }
 
   render () {
+    console.log('from render')
     console.log(this.props.products);
     return (
       <div className="App">
