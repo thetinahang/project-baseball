@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import ProductList from './containers/ProductList';
 import { connect } from 'react-redux';
 import { fetchProducts } from './actions/productActions';
-import {Button, Box} from '@material-ui/core';
+import {Box, Grid, Paper } from '@material-ui/core';
 
 
 class App extends Component {
@@ -18,13 +18,25 @@ class App extends Component {
     console.log(this.props.products);
     return (
       <div className="App">
-        <Box color="text.primary">
+        <Box component="span" m={1} align="center">
           <h1>Hello from the App file</h1>
         </Box>
-        <ProductList products={this.props.products} />
-        <Button variant="contained" color="primary">
-          Hello World
-        </Button>
+        <Box component="span" m={1}>
+          <ProductList products={this.props.products} />
+        </Box>
+        <Grid container spacing={1}>
+          <Grid container item xs={12} spacing={3}>
+            <Paper>
+            Hello
+            </Paper>
+          </Grid>
+          <Grid container item xs={12} spacing={3}>
+            <Paper />
+          </Grid>
+          <Grid container item xs={12} spacing={3}>
+            <Paper />
+          </Grid>
+        </Grid>
       </div>
     ) 
   }
