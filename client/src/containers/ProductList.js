@@ -6,10 +6,10 @@ class ProductList extends Component {
  		console.log('from list products in product list')
  		console.log(this.props.products)
  		return this.props.products['products'].map(product => 
-        <Card variant="outlined" square key={product['attributes']['id']}>
-		 			  <CardHeader title={product['attributes']['name']}></CardHeader> 
-            <CardContent>{product['attributes']['description']}</CardContent>
-        </Card>
+      <Card variant="outlined" key={product['attributes']['id']}>
+		 		<CardHeader title={product['attributes']['name']}></CardHeader> 
+        <CardContent>{product['attributes']['description']}</CardContent>
+      </Card>
  		)
  	}
 
