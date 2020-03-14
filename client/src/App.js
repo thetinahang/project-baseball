@@ -18,7 +18,7 @@ class App extends Component {
     return (
       <div className="App">
         <Box align="center">
-          <h1>Hello from the App file</h1>
+          <h1>Welcome!</h1>
         </Box>
         <ProductList products={this.props.products} />
       </div>
