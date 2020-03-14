@@ -29,7 +29,7 @@ class App extends Component {
     console.log('from mount')
     console.log(this.props)
     this.props.fetchProducts()
-  }
+  };
 
   const classes = useStyles();
 
