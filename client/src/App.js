@@ -31,7 +31,7 @@ class App extends Component {
     this.props.fetchProducts()
   }
 
-  var classes = useStyles();
+  const classes = useStyles();
 
   render () {
     console.log('from render')
