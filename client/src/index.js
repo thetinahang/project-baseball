@@ -18,6 +18,7 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 
 const store = createStore(rootReducer, applyMiddleware(thunk));
 
+// remove later
 const About = () => <h1>This is my about component!</h1>;
 
 const Root = ({ store }) => (
@@ -28,17 +29,6 @@ const Root = ({ store }) => (
     </Router>
   </Provider>
 )
-
-//ReactDOM.render(
-//	<Provider store={store} >
-//			<App />	
-//	  <Router>
-//	  	<div>
-//	    	<Route path="/" component={Home} />
-//	    </div>
-//	  </Router>) 	
-//	</Provider>,
-//	document.getElementById('root')
 
 render(<Root store={store} />, document.getElementById('root'))
 
