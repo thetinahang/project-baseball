@@ -3,14 +3,34 @@ import { Card, CardContent } from '@material-ui/core';
 import CardActions from '@material-ui/core/CardActions';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
+import { makeStyles } from '@material-ui/core/styles';
 
-class ProductList extends Component {
+const useStyles = makeStyles({
+  root: {
+    minWidth: 275,
+  },
+  bullet: {
+    display: 'inline-block',
+    margin: '0 2px',
+    transform: 'scale(0.8)',
+  },
+  title: {
+    fontSize: 14,
+  },
+  pos: {
+    marginBottom: 12,
+  },
+});
+
+function ProductList() {
+  const classes = useStyles();
+
  	listProducts = () => {
  		console.log('from list products in product list')
  		console.log(this.props.products)
  		return this.props.products['products'].map(product => 
       <Card variant="outlined" key={product['attributes']['id']}>
-        <CardContent>
+        <CardContent className={classes.root}>
           <Typography variant="h5" component="h2">
             Name: {product['attributes']['name']}
           </Typography>
@@ -25,14 +45,12 @@ class ProductList extends Component {
  		)
  	}
 
- 	render() {
- 		console.log('from product list render')
+  console.log('from product list render')
 		return (
 	 		<div>
 	 			{this.listProducts()}
 	 		</div>
 	 	)
-	}
 }
 
 export default ProductList; 
