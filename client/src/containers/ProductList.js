@@ -39,7 +39,7 @@ function ProductList(products) {
 	return (
 		<Grid container direction="row" justify="center" alignItems="center" >
 			{products['products'].map(product =>
-				<Card className={classes.root} width="400px" >
+				<Card className={classes.root} width="400px" key={product.id}>
 					<CardHeader title="" className={classes.header} />
 					<Divider variant="middle" />
 					<CardContent>
