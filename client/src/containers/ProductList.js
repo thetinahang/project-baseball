@@ -1,4 +1,4 @@
-import React, { Component } from 'react'; 
+import React from 'react'; 
 import { Card, CardContent } from '@material-ui/core';
 import CardActions from '@material-ui/core/CardActions';
 import Button from '@material-ui/core/Button';
@@ -22,13 +22,12 @@ const useStyles = makeStyles({
   },
 });
 
-function ProductList() {
+function ProductList(products) {
   const classes = useStyles();
 
-  listProducts = () => {
-    console.log('from list products in product list')
-    console.log(this.props.products)
-    return this.props.products['products'].map(product => 
+  console.log('from product list render')
+    return (
+      products['products'].map(product => 
       <Card variant="outlined" key={product['attributes']['id']}>
         <CardContent className={classes.root}>
           <Typography variant="h5" component="h2">
@@ -43,13 +42,6 @@ function ProductList() {
         </CardActions>
       </Card>
     )
-  }
-
-  console.log('from product list render')
-    return (
-      <div>
-        {this.listProducts()}
-      </div>
     )
 }
 

@@ -17,12 +17,14 @@ class App extends Component {
     console.log('from render')
     console.log(this.props.products);
 
+    const { products } = this.props.products;
+
     return (
       <div className="App">
-        <Box align="center" className={classes.root}>
+        <Box align="center">
           <h1>Welcome!</h1>
         </Box>
-        <ProductList products={this.props.products} />
+        <ProductList products={products} />
       </div>
     ) 
   }
