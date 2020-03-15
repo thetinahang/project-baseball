@@ -25,10 +25,10 @@ const useStyles = makeStyles({
 function ProductList() {
   const classes = useStyles();
 
- 	listProducts = () => {
- 		console.log('from list products in product list')
- 		console.log(this.props.products)
- 		return this.props.products['products'].map(product => 
+  listProducts = () => {
+    console.log('from list products in product list')
+    console.log(this.props.products)
+    return this.props.products['products'].map(product => 
       <Card variant="outlined" key={product['attributes']['id']}>
         <CardContent className={classes.root}>
           <Typography variant="h5" component="h2">
@@ -42,15 +42,15 @@ function ProductList() {
           <Button size="small">See More Info</Button>
         </CardActions>
       </Card>
- 		)
- 	}
+    )
+  }
 
   console.log('from product list render')
-		return (
-	 		<div>
-	 			{this.listProducts()}
-	 		</div>
-	 	)
+    return (
+      <div>
+        {this.listProducts()}
+      </div>
+    )
 }
 
 export default ProductList; 
