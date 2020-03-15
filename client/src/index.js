@@ -1,11 +1,12 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { render } from 'react-dom';
 import { Provider } from 'react-redux';
 import { createStore, applyMiddleware} from 'redux';
 import thunk from 'redux-thunk';
 import rootReducer from './reducers';
 import './index.css';
 import App from './App';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 // import * as serviceWorker from './serviceWorker';
 
 //ReactDOM.render(<App />, document.getElementById('root'));//
@@ -17,9 +18,28 @@ import App from './App';
 
 const store = createStore(rootReducer, applyMiddleware(thunk));
 
-ReactDOM.render(
-	<Provider store={store} >
-			<App />	 	
-	</Provider>,
-	document.getElementById('root')
-);
+const About = () => <h1>This is my about component!</h1>;
+
+const Root = ({ store }) => (
+  <Provider store={store}>
+    <Router>
+      <Route path="/" component={App} />
+      <Route exact path="/about" component={About} />
+    </Router>
+  </Provider>
+)
+
+//ReactDOM.render(
+//	<Provider store={store} >
+//			<App />	
+//	  <Router>
+//	  	<div>
+//	    	<Route path="/" component={Home} />
+//	    </div>
+//	  </Router>) 	
+//	</Provider>,
+//	document.getElementById('root')
+
+render(<Root store={store} />, document.getElementById('root'))
+
+export default Root;

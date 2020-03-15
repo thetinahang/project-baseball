@@ -9,6 +9,8 @@ import Grid from '@material-ui/core/Grid';
 import { Divider } from '@material-ui/core';
 import CardHeader from '@material-ui/core/CardHeader';
 
+import { Link } from 'react-router-dom';
+
 const useStyles = makeStyles(theme => ({
 	root: {
 		borderRadius: 12,
@@ -52,7 +54,7 @@ function ProductList(products) {
 					</CardContent>
 					<Divider variant="middle" />
 					<CardActions className={classes.action}>
-						<Button variant="contained" color="primary" className={classes.button}>
+						<Button variant="contained" color="primary" className={classes.button} component={ Link } to="/about">
 							See more info
 						</Button>
 					</CardActions>
