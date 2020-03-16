@@ -28,7 +28,7 @@ function ProductDetail(product) {
   return (
     <div className={classes.root}>
       <Paper variant="outlined" square>
-      test name
+        <p align="center">Current Price: {product.product.id}</p>
       </Paper>
     </div>
   )
