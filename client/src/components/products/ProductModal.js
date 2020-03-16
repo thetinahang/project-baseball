@@ -1,6 +1,7 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Modal from '@material-ui/core/Modal';
+import {Button} from '@material-ui/core';
 
 function rand() {
   return Math.round(Math.random() * 20) - 10;
@@ -28,7 +29,7 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-export default function ProductModal() {
+export default function ProductModal(product) {
 	const classes = useStyles();
   const [modalStyle] = React.useState(getModalStyle);
   const [open, setOpen] = React.useState(false);
@@ -41,11 +42,14 @@ export default function ProductModal() {
     setOpen(false);
   };
 
+  console.log('from modal')
+  //console.log(product.product.id)
+
   return (
     <div>
-      <button type="button" onClick={handleOpen}>
-        Open Modal
-      </button>
+      <Button onClick={handleOpen}>
+         See More Info
+      </Button>
       <Modal
         aria-labelledby="simple-modal-title"
         aria-describedby="simple-modal-description"
@@ -53,11 +57,10 @@ export default function ProductModal() {
         onClose={handleClose}
       >
         <div style={modalStyle} className={classes.paper}>
-          <h2 id="simple-modal-title">Text in a modal</h2>
+          <h2 id="simple-modal-title">{product.product.name}</h2>
           <p id="simple-modal-description">
-            Duis mollis, est non commodo luctus, nisi erat porttitor ligula.
+            {product.product.description}
           </p>
-          <ProductModal />
         </div>
       </Modal>
     </div>

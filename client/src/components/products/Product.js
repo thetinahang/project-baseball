@@ -1,14 +1,12 @@
 import React from 'react';
 import { Card, CardContent } from '@material-ui/core';
 import CardActions from '@material-ui/core/CardActions';
-import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import { Divider } from '@material-ui/core';
 import CardHeader from '@material-ui/core/CardHeader';
-import { Link } from 'react-router-dom';
 import ProductDetail from '../products/ProductDetail';
-import ProductButton from '../products/ProductButton';
+import ProductModal from '../products/ProductModal';
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -52,7 +50,7 @@ function Product(product) {
       </CardContent>
       <Divider variant="middle" />
       <CardActions className={classes.action}>
-        <ProductButton product={product} className={classes.button}/>
+        <ProductModal product={product.product}/>
       </CardActions>
     </Card>
   )
