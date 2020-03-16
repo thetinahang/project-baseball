@@ -4,6 +4,7 @@ import Modal from '@material-ui/core/Modal';
 import {Button} from '@material-ui/core';
 import Backdrop from '@material-ui/core/Backdrop';
 import Fade from '@material-ui/core/Fade';
+import ProductDetail from '../products/ProductDetail';
 
 const useStyles = makeStyles(theme => ({
   modal: {
@@ -55,6 +56,7 @@ export default function ProductModal(product) {
           <div className={classes.paper}>
             <h2 id="transition-modal-title">{product.product.name}</h2>
             <p id="transition-modal-description">{product.product.description}</p>
+            <ProductDetail product={product.product} />
           </div>
         </Fade>
       </Modal>
