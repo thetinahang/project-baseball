@@ -5,7 +5,6 @@ import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import { Divider } from '@material-ui/core';
 import CardHeader from '@material-ui/core/CardHeader';
-import ProductDetail from '../products/ProductDetail';
 import ProductModal from '../products/ProductModal';
 
 const useStyles = makeStyles(theme => ({

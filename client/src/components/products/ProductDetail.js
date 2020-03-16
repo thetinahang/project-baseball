@@ -1,13 +1,7 @@
 import React from 'react';
-import { Card, CardContent } from '@material-ui/core';
-import CardActions from '@material-ui/core/CardActions';
-import Button from '@material-ui/core/Button';
-import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
-import { Divider } from '@material-ui/core';
-import CardHeader from '@material-ui/core/CardHeader';
-import { Link } from 'react-router-dom';
 import Paper from '@material-ui/core/Paper';
+import KeyTermList from '../../containers/KeyTermList';
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -29,6 +23,7 @@ function ProductDetail(product) {
     <div className={classes.root}>
       <Paper variant="outlined" square>
         <p align="center">Current Price: {product.product.id}</p>
+        <KeyTermList />
       </Paper>
     </div>
   )
