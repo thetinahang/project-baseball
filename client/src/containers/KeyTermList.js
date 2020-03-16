@@ -1,12 +1,12 @@
-import { Component } from 'react'; 
+import React, { Component } from 'react'; 
 import { connect } from 'react-redux';
 import { fetchKeyTerms } from '../actions/keyTermActions';
 
 
 class KeyTermList extends Component {
 
-	componentDidMount() {
-    console.log('from mount')
+	componentWillMount() {
+    console.log('from key term list mount')
     console.log(this.props)
     this.props.fetchKeyTerms()
   }
@@ -24,9 +24,10 @@ class KeyTermList extends Component {
 //	}
 
 	render() {
+    const { keyterms } = this.props.keyterms;
 		console.log('from key term list render')
 		return (
-			'Hello from key term list'
+			<div>{keyterms}</div>
 		)
 	}
 }
