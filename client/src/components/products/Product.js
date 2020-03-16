@@ -7,7 +7,8 @@ import { makeStyles } from '@material-ui/core/styles';
 import { Divider } from '@material-ui/core';
 import CardHeader from '@material-ui/core/CardHeader';
 import { Link } from 'react-router-dom';
-import ProductDetail from '../ProductDetail';
+import ProductDetail from '../products/ProductDetail';
+import ProductButton from '../products/ProductButton';
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -21,7 +22,7 @@ const useStyles = makeStyles(theme => ({
     spacing: 10,
   },
   list: {
-    padding: '20px',
+    padding: '10px',
   },
   button: {
     margin: theme.spacing(1),
@@ -51,9 +52,7 @@ function Product(product) {
       </CardContent>
       <Divider variant="middle" />
       <CardActions className={classes.action}>
-        <Button variant="contained" color="primary" className={classes.button} component={ Link } to={'api/v2/users/'+ product.product['user_id'] +'/products/' + product.product['id']}>
-          See more info
-        </Button>
+        <ProductButton product={product} className={classes.button}/>
       </CardActions>
     </Card>
   )

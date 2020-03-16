@@ -8,7 +8,30 @@ import { Divider } from '@material-ui/core';
 import CardHeader from '@material-ui/core/CardHeader';
 import { Link } from 'react-router-dom';
 
-function ProductDetail() {
+const useStyles = makeStyles(theme => ({
+  root: {
+    borderRadius: 12,
+    minWidth: 256,
+    textAlign: 'center',
+    margin: theme.spacing(2),
+  },
+  header: {
+    textAlign: 'center',
+    spacing: 10,
+  },
+  list: {
+    padding: '20px',
+  },
+  button: {
+    margin: theme.spacing(1),
+  },
+  action: {
+    display: 'flex',
+    justifyContent: 'space-around',
+  },
+}));
+
+function ProductDetail(product) {
   const classes = useStyles();
   console.log('from product detail render')
   console.log(product)
@@ -19,10 +42,10 @@ function ProductDetail() {
       <Divider variant="middle" />
       <CardContent>
         <Typography variant="h4" align="center">
-          {product.product['name']}
+          test name
         </Typography>
         <div className={classes.list}>
-          <Typography align="center">{product.product['description']}</Typography>
+          <Typography align="center">test description</Typography>
         </div>
       </CardContent>
       <Divider variant="middle" />
