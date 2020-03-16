@@ -7,27 +7,16 @@ import { makeStyles } from '@material-ui/core/styles';
 import { Divider } from '@material-ui/core';
 import CardHeader from '@material-ui/core/CardHeader';
 import { Link } from 'react-router-dom';
+import Paper from '@material-ui/core/Paper';
 
 const useStyles = makeStyles(theme => ({
   root: {
-    borderRadius: 12,
-    minWidth: 256,
-    textAlign: 'center',
-    margin: theme.spacing(2),
-  },
-  header: {
-    textAlign: 'center',
-    spacing: 10,
-  },
-  list: {
-    padding: '20px',
-  },
-  button: {
-    margin: theme.spacing(1),
-  },
-  action: {
     display: 'flex',
-    justifyContent: 'space-around',
+    '& > *': {
+      margin: theme.spacing(1),
+      width: theme.spacing(16),
+      height: theme.spacing(16),
+    },
   },
 }));
 
@@ -37,24 +26,11 @@ function ProductDetail(product) {
   console.log(product)
 
   return (
-    <Card className={classes.root} width="400px" key={product.id}>
-      <CardHeader title="Product Details" className={classes.header} />
-      <Divider variant="middle" />
-      <CardContent>
-        <Typography variant="h4" align="center">
-          test name
-        </Typography>
-        <div className={classes.list}>
-          <Typography align="center">test description</Typography>
-        </div>
-      </CardContent>
-      <Divider variant="middle" />
-      <CardActions className={classes.action}>
-        <Button variant="contained" color="primary" className={classes.button}>
-          See more info
-        </Button>
-      </CardActions>
-    </Card>
+    <div className={classes.root}>
+      <Paper variant="outlined" square>
+      test name
+      </Paper>
+    </div>
   )
 };
 

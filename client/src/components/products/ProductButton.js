@@ -9,6 +9,7 @@ import CardHeader from '@material-ui/core/CardHeader';
 import { Link } from 'react-router-dom';
 import { spacing } from '@material-ui/system';
 import ProductDetail from '../products/ProductDetail';
+import ProductModal from '../products/ProductModal';
 
 
 class ProductButton extends Component {
@@ -30,7 +31,7 @@ class ProductButton extends Component {
     const isClicked = this.state.isClicked;
     let button;
     if (isClicked) {
-      button = <ProductDetail product={this.props.product} />
+      button = <ProductModal />
     } else {
       button = <Button>See More Info</Button>
     }
@@ -38,7 +39,7 @@ class ProductButton extends Component {
     return (
       <div>
         <Button onClick={this.handleClick}>
-          {button}
+          <ProductModal />
         </Button>
       </div>
     )
