@@ -9,5 +9,6 @@ class ProductsController < ApplicationController
 	def show
 		@user = User.find(params[:user_id])
 		@product = @user.products.where(id: params[:id])
+		render json: ProductSerializer.new(@product).serialized_json
 	end
 end
