@@ -7,7 +7,8 @@ function ProductDetail(product) {
 
   return (
     <div>
-      <p align="center">Current Price: {product.product.id}</p>
+      <br />
+      <p align="center"><strong>Current Price</strong>: {product.product.id}</p>
       <br />
       <Button>Change Key Terms</Button>
     </div>
