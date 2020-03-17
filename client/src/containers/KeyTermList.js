@@ -5,7 +5,7 @@ import { fetchKeyTerms } from '../actions/keyTermActions';
 
 class KeyTermList extends Component {
 
-	componentWillMount() {
+	componentDidMount() {
     console.log('from key term list mount')
     console.log(this.props)
     this.props.fetchKeyTerms()
@@ -27,7 +27,7 @@ class KeyTermList extends Component {
     const { keyterms } = this.props.keyterms;
 		console.log('from key term list render')
 		return (
-			<div>{keyterms}</div>
+			<div>Key Terms</div>
 		)
 	}
 }

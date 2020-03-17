@@ -1,5 +1,7 @@
 import React from 'react';
 import {Button} from '@material-ui/core';
+import Link from '@material-ui/core/Link';
+import KeyTermList from '../../containers/KeyTermList';
 
 function ProductDetail(product) {
   console.log('from product detail render')
@@ -10,7 +12,7 @@ function ProductDetail(product) {
       <br />
       <p align="center"><strong>Current Price</strong>: {product.product.id}</p>
       <br />
-      <Button>Change Key Terms</Button>
+      <Button component={Link} to='/keyterms'>Change Key Terms</Button>
     </div>
   )
 };

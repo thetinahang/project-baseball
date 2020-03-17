@@ -7,6 +7,10 @@ import rootReducer from './reducers';
 import './index.css';
 import App from './App';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
+import KeyTermList from './containers/KeyTermList';
+import ProductList from './containers/ProductList';
+import NavBar from './components/NavBar';
+import Home from './components/Home';
 // import * as serviceWorker from './serviceWorker';
 
 //ReactDOM.render(<App />, document.getElementById('root'));//
@@ -24,8 +28,11 @@ const About = () => <h1>This is my about component!</h1>;
 const Root = ({ store }) => (
   <Provider store={store}>
     <Router>
-      <Route path="/" component={App} />
+    <NavBar />
+      <Route exact path="/" component={App} />
       <Route exact path="/about" component={About} />
+      <Route exact path="/products" component={ProductList} />
+      <Route exact path="/keyterms" component={KeyTermList} />
     </Router>
   </Provider>
 )
