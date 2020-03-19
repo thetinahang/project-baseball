@@ -15,7 +15,7 @@ class KeyTermList extends Component {
 
 	render() {
     const { keyterms } = this.props.keyterms;
-    console.log(keyterms[0])
+    console.log(keyterms)
 		console.log('from key term list render')
 		return (
       <div>
@@ -28,7 +28,6 @@ class KeyTermList extends Component {
 		)
 	}
 }
-
 
 const mapStateToProps = state => {
   return { 
