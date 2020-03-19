@@ -1,9 +1,8 @@
 import React, {Component} from 'react'; 
-import Grid from '@material-ui/core/Grid';
-import Product from '../components/products/Product'
 import { connect } from 'react-redux';
 import { fetchProducts } from '../actions/productActions';
-import { Box } from '@material-ui/core';
+import Grid from '@material-ui/core/Grid';
+import Product from '../components/products/Product'
 
 class ProductList extends Component {
 

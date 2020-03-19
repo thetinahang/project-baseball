@@ -4,8 +4,6 @@ import CardActions from '@material-ui/core/CardActions';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import { Divider } from '@material-ui/core';
-import CardHeader from '@material-ui/core/CardHeader';
-import ProductModal from '../products/ProductModal';
 
 const useStyles = makeStyles(theme => ({
   root: {

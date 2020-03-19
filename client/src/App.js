@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
-import ProductList from './containers/ProductList';
-import { connect } from 'react-redux';
-import { fetchProducts } from './actions/productActions';
 import { Box } from '@material-ui/core';
+import ProductList from './containers/ProductList';
 
 class App extends Component {
 
@@ -15,7 +13,6 @@ class App extends Component {
           <h1>Welcome!</h1>
           <h2>Check out your products</h2>
           <ProductList />
-
         </Box>
       </div>
     ) 
