@@ -37,7 +37,8 @@ function KeyTerm(keyterm) {
 
   return (
     <Card className={classes.root} width="400px" key={keyterm.id}>
-      <CardHeader title="" className={classes.header} />
+      <CardActions className={classes.action}>
+      </CardActions>
       <Divider variant="middle" />
       <CardContent>
         <Typography variant="h4" align="center">
