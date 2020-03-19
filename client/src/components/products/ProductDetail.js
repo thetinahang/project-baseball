@@ -1,6 +1,6 @@
 import React from 'react';
 import {Button} from '@material-ui/core';
-import Link from '@material-ui/core/Link';
+import {Link} from 'react-router-dom';
 import KeyTermList from '../../containers/KeyTermList';
 
 function ProductDetail(product) {
