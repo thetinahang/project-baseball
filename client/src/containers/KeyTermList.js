@@ -1,7 +1,6 @@
 import React, { Component } from 'react'; 
 import { connect } from 'react-redux';
 import { fetchKeyTerms } from '../actions/keyTermActions';
-import { Card, CardContent, CardHeader } from '@material-ui/core';
 import Grid from '@material-ui/core/Grid';
 import KeyTerm from '../components/keyterms/KeyTerm'
 
@@ -20,12 +19,11 @@ class KeyTermList extends Component {
 		console.log('from key term list render')
 		return (
       <div>
-      {keyterms.map(keyterm =>
-        <Card variant="outlined" key={keyterm['attributes']['id']}>
-          <CardHeader title={keyterm['attributes']['value']}></CardHeader> 
-        <CardContent>desc</CardContent>
-        </Card>
-      )}
+      <Grid container direction="row" justify="center" alignItems="center" >
+        {keyterms.map(keyterm =>
+          <KeyTerm keyterm={keyterm['attributes']} key={keyterm.id}/>
+        )}
+      </Grid>
       </div>
 		)
 	}
