@@ -10,7 +10,6 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 import KeyTermList from './containers/KeyTermList';
 import ProductList from './containers/ProductList';
 import NavBar from './components/NavBar';
-import Home from './components/Home';
 // import * as serviceWorker from './serviceWorker';
 
 //ReactDOM.render(<App />, document.getElementById('root'));//
