@@ -1,9 +1,10 @@
 import React from 'react';
 import Button from '@material-ui/core/Button';
 import MenuIcon from '@material-ui/icons/Menu';
-import { NavLink } from 'react-router-dom';
 import Menu from '@material-ui/core/Menu';
 import MenuItem from '@material-ui/core/MenuItem';
+import HomeMenuItem from './HomeMenuItem';
+import ProductsMenuItem from './ProductsMenuItem';
 
 export default function PBMenu() {
   const [anchorEl, setAnchorEl] = React.useState(null);
@@ -28,7 +29,8 @@ export default function PBMenu() {
         open={Boolean(anchorEl)}
         onClose={handleClose}
       >
-        <MenuItem onClick={handleClose}>Profile</MenuItem>
+        <HomeMenuItem />
+        <ProductsMenuItem />
         <MenuItem onClick={handleClose}>My account</MenuItem>
         <MenuItem onClick={handleClose}>Logout</MenuItem>
       </Menu>
