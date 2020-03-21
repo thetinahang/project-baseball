@@ -11,6 +11,8 @@ Rails.application.routes.draw do
 	  		resources :key_terms
         resources :product_prices
 	  	end
-	 end
+    end
+    post 'user_token', to: 'user_token#create'
+    post 'find_user', to: 'users#find'
   end
 end
