@@ -27,7 +27,7 @@ const About = () => <h1>This is my about component!</h1>;
 const Root = ({ store }) => (
   <Provider store={store}>
     <Router>
-    <NavBar />
+    	<NavBar />
       <Route exact path="/" component={App} />
       <Route exact path="/about" component={About} />
       <Route exact path="/products" component={ProductList} />
