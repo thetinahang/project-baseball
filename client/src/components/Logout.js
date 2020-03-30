@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import axios from "axios";
+import { NavLink } from 'react-router-dom';
+import MenuItem from '@material-ui/core/MenuItem';
  
 export default class Logout extends Component {
   constructor(props) {
@@ -25,7 +27,9 @@ export default class Logout extends Component {
   render() {
     return (
       <div>
-        <button onClick={()=>this.handleLogoutClick()}>Logout</button>
+        <NavLink to="/logout" exact>
+          <MenuItem>Logout</MenuItem>
+        </NavLink>
       </div>
     );
   }
