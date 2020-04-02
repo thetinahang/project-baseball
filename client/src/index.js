@@ -9,7 +9,7 @@ import App from './App';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import KeyTermList from './containers/KeyTermList';
 import ProductList from './containers/ProductList';
-import Logout from './components/Logout';
+import Logout from './components/auth/Logout';
 import NavBar from './components/NavBar';
 // import * as serviceWorker from './serviceWorker';
 

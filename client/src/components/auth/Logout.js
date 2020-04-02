@@ -27,8 +27,8 @@ export default class Logout extends Component {
   render() {
     return (
       <div>
-        <NavLink to="/logout" exact>
-          <MenuItem>Logout</MenuItem>
+        <NavLink to='/' exact>
+          <MenuItem onClick={()=>this.handleLogoutClick()}>Logout</MenuItem>
         </NavLink>
       </div>
     );
