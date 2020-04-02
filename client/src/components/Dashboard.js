@@ -6,7 +6,7 @@ const Dashboard = props => {
       <div>
         <h1>Dashboard</h1>
         <h1>Status: {props.loggedInStatus}</h1>
-        <p>User: {props.user}</p>
+        <p>User: {props.user['email']}</p>
       </div>
     </div>
   );
