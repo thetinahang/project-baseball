@@ -19,11 +19,14 @@ class ProductList extends Component {
 		const { products } = this.props.products
 		
 		return (
+			<div align="center">
+			<h1>Here are your products:</h1>
 			<Grid container direction="row" justify="center" alignItems="center" >
 				{products.map(product =>
 					<Product product={product['attributes']} key={product.id}/>
 				)}
 			</Grid>
+			</div>
 	)
 	};
 }

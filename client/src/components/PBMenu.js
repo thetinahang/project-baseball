@@ -5,7 +5,7 @@ import Menu from '@material-ui/core/Menu';
 import MenuItem from '@material-ui/core/MenuItem';
 import HomeMenuItem from './HomeMenuItem';
 import ProductsMenuItem from './ProductsMenuItem';
-import Logout from './Logout';
+import Logout from "./auth/Logout";
 
 export default function PBMenu() {
   const [anchorEl, setAnchorEl] = React.useState(null);
@@ -29,10 +29,8 @@ export default function PBMenu() {
         keepMounted
         open={Boolean(anchorEl)}
         onClose={handleClose}
-      >
-        <HomeMenuItem />
+      > 
         <ProductsMenuItem />
-        <MenuItem onClick={handleClose}>My account</MenuItem>
         <Logout />
       </Menu>
     </div>

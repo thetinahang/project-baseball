@@ -22,17 +22,12 @@ import NavBar from './components/NavBar';
 
 const store = createStore(rootReducer, applyMiddleware(thunk));
 
-// remove later
-const About = () => <h1>This is my about component!</h1>;
-
 const Root = ({ store }) => (
   <Provider store={store}>
     <Router>
     	<NavBar />
       <Route exact path="/" component={App} />
-      <Route exact path="/about" component={About} />
       <Route exact path="/products" component={ProductList} />
-      <Route exact path="/keyterms" component={KeyTermList} />
       <Route exact path="/keyterms" component={KeyTermList} />
       <Route exact path="/logout" component={Logout} />
     </Router>

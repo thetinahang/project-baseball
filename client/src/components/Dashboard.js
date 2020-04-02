@@ -6,9 +6,8 @@ const Dashboard = props => {
     <div>
       <div>
         <h1>Dashboard</h1>
-        <h1>Status: {props.loggedInStatus}</h1>
-        <p>User: {props.user['email']}</p>
-        <p>User: {props.user['id']}</p>
+        <h2>Status: {props.loggedInStatus}</h2>
+        <p>You are User {props.user['id']} with email: {props.user['email']}</p>
       </div>
       <ProductList />
     </div>
