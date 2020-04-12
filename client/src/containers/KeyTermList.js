@@ -7,13 +7,7 @@ import KeyTerm from '../components/keyterms/KeyTerm'
 
 class KeyTermList extends Component {
 
-//  	componentDidMount() {
-//      console.log('from key term list mount')
-//      console.log(this.props)
-//      this.props.fetchKeyTerms()
-//    }
-
-  componentWillMount() {
+	componentDidMount() {
     console.log('from key term list mount')
     console.log(this.props)
     this.props.fetchKeyTerms()
