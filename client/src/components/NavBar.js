@@ -30,7 +30,7 @@ export default function NavBar() {
             <PBMenu/>
           </IconButton>
           <Typography variant="h6" className={classes.title}>
-            Home
+            Tina's React App with Rails API backend
           </Typography>
         </Toolbar>
       </AppBar>
