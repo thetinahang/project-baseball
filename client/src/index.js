@@ -8,7 +8,7 @@ import './index.css';
 import App from './App';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import KeyTermList from './containers/KeyTermList';
-import ProductList from './components/products/ProductList';
+import ProductsContainer from './containers/ProductsContainer';
 import Logout from './components/auth/Logout';
 import NavBar from './components/NavBar';
 // import * as serviceWorker from './serviceWorker';
@@ -27,7 +27,7 @@ const Root = ({ store }) => (
     <Router>
     	<NavBar />
       <Route exact path="/" component={App} />
-      <Route exact path="/products" component={ProductList} />
+      <Route exact path="/products" component={ProductsContainer} />
       <Route exact path="/keyterms" component={KeyTermList} />
       <Route exact path="/logout" component={Logout} />
     </Router>

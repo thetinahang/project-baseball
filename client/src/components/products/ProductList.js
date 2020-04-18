@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import { connect } from 'react-redux';
 import { fetchProducts } from '../../actions/productActions';
 import Grid from '@material-ui/core/Grid';
-import Product from '../Product';
+import Product from '../products/Product';
 
 class ProductList extends Component {
 

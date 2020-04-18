@@ -14,6 +14,12 @@ const productsReducer = (state = { products: [], loading: false}, action ) => {
 				loading: false
 			}
 
+		case 'ADD_PRODUCT':
+			return {
+				...state, 
+				products: [...state.products, action.product]
+			}
+
 		default: 
 			return state;
 	}

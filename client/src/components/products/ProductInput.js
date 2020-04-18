@@ -28,8 +28,10 @@ class ProductInput extends Component {
     return(
       <div>
         <form onSubmit={this.handleSubmit}>
-          <label>Add Product: </label>
-          <input type="text" onChange={this.handleChange} value={this.state.name} />
+          <h1>Add a Product:</h1>
+          <label>Name: </label><input type="text" onChange={this.handleChange} value={this.state.name} /><br/>
+          <label>Description: </label><input type="text" onChange={this.handleChange} value={this.state.description} /><br/>
+          <label>User ID: </label><input type="text" onChange={this.handleChange} value={this.state.user_id} /><br/>
           <input type="submit"/>
         </form>
       </div>
