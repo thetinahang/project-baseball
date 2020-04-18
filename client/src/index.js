@@ -8,7 +8,7 @@ import './index.css';
 import App from './App';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import KeyTermList from './containers/KeyTermList';
-import ProductList from './containers/ProductList';
+import ProductList from './components/products/ProductList';
 import Logout from './components/auth/Logout';
 import NavBar from './components/NavBar';
 // import * as serviceWorker from './serviceWorker';
