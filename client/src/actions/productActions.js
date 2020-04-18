@@ -17,7 +17,7 @@ export const fetchProducts = () => {
 
 
 export const addProduct = (product) => {
-  console.log(createAddUrl({id:1}))
+  console.log(createUrl({id:1}))
   let body = JSON.stringify(
     {
       product: {
@@ -40,7 +40,7 @@ export const addProduct = (product) => {
       }
     ))
       .then(response => response.json())
-      //.then(json => console.log(json['data']))
+      .then(json => console.log(json['data']))
       .catch(error => console.log(error))
     //then(products => {dispatch({ type: 'FETCH_PRODUCTS', products: products })})
   }

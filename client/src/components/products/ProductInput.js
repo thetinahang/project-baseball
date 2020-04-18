@@ -10,13 +10,13 @@ class ProductInput extends Component {
 
   handleChange = event => {
     this.setState({
-      name: event.target.value
+      [event.target.name]: event.target.value
     })
   }
 
   handleSubmit = event => {
     event.preventDefault();
-    this.props.addBand(this.state);
+    this.props.addProduct(this.state);
     this.setState({
       name: '',
       description: '',
@@ -29,9 +29,9 @@ class ProductInput extends Component {
       <div>
         <form onSubmit={this.handleSubmit}>
           <h1>Add a Product:</h1>
-          <label>Name: </label><input type="text" onChange={this.handleChange} value={this.state.name} /><br/>
-          <label>Description: </label><input type="text" onChange={this.handleChange} value={this.state.description} /><br/>
-          <label>User ID: </label><input type="text" onChange={this.handleChange} value={this.state.user_id} /><br/>
+          <label>Name: </label><input type="text" name="name"onChange={this.handleChange} /><br/>
+          <label>Description: </label><input type="text" name="description" onChange={this.handleChange} /><br/>
+          <label>User ID: </label><input type="text" name="user_id" onChange={this.handleChange} /><br/>
           <input type="submit"/>
         </form>
       </div>
