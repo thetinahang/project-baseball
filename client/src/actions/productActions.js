@@ -13,17 +13,17 @@ export const fetchProducts = () => {
       .catch(error => console.log(error))
     //then(products => {dispatch({ type: 'FETCH_PRODUCTS', products: products })})
   }
-} 
+}; 
 
 
-export const addProduct = (product) => {
+export function addProduct(product) {
   console.log(createUrl({id:1}))
   let body = JSON.stringify(
     {
       product: {
         name: product.name, 
         description: product.description, 
-        user_id: product.user_id
+        user_id: 1
       }
     }
   )
@@ -40,8 +40,9 @@ export const addProduct = (product) => {
       }
     ))
       .then(response => response.json())
-      .then(json => console.log(json['data']))
+      .then(product => dispatch({type:'ADD_PRODUCT', payload: product}))
+      //.then(json => console.log(json['data']))
       .catch(error => console.log(error))
     //then(products => {dispatch({ type: 'FETCH_PRODUCTS', products: products })})
   }
-} 
+}; 

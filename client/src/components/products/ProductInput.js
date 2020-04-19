@@ -16,6 +16,7 @@ class ProductInput extends Component {
 
   handleSubmit = event => {
     event.preventDefault();
+    debugger
     this.props.addProduct(this.state);
     this.setState({
       name: '',
