@@ -4,6 +4,9 @@ import axios from "axios";
 
 import Home from "./components/Home";
 import Dashboard from "./components/Dashboard";
+import KeyTermList from './containers/KeyTermList';
+import ProductsContainer from './containers/ProductsContainer';
+import Logout from './components/auth/Logout';
 
 export default class App extends Component {
   constructor() {
@@ -91,6 +94,9 @@ export default class App extends Component {
                 />
               )}
             />
+            <Route exact path="/products" component={ProductsContainer} />
+            <Route exact path="/keyterms" component={KeyTermList} />
+            <Route exact path="/logout" component={Logout} />
           </Switch>
         </BrowserRouter>
       </div>

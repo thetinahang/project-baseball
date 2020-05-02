@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from 'react-router-dom';
 
 const Dashboard = props => {
   return (
@@ -7,7 +8,7 @@ const Dashboard = props => {
         <h1>Dashboard</h1>
         <h2>Status: {props.loggedInStatus}</h2>
         <p>You are User {props.user['id']} with email: {props.user['email']}</p>
-        <p>Use the menu to get to your products.</p>
+        <Link to="/products">Products</Link>
       </div>
     </div>
   );
