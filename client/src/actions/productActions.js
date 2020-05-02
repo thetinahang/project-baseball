@@ -1,7 +1,8 @@
 export const fetchProducts = (userId) => {
     return (dispatch) => {
       dispatch({ type: 'LOADING_PRODUCTS' })
-      fetch(`http://localhost:3001/api/users/${userId}/products`)
+      // need to replace the user id in this request
+      fetch(`http://localhost:3001/api/users/1/products`)
         .then(response => response.json())
         .then(json => dispatch({ type: 'FETCH_PRODUCTS', products: json['data'] }))
         .catch(error => console.log(error))
@@ -26,7 +27,7 @@ export const removeProduct = (userId, productId) => {
   return dispatch => {
     dispatch({
       type: 'REMOVE_PRODUCT',
-      userId: userId
+      userId: userId,
       productId: productId
     });
   fetch(`http://localhost:3001/api/users/${userId}/products/${productId}`, {
