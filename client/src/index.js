@@ -11,25 +11,17 @@ import KeyTermList from './containers/KeyTermList';
 import ProductsContainer from './containers/ProductsContainer';
 import Logout from './components/auth/Logout';
 import NavBar from './components/NavBar';
-// import * as serviceWorker from './serviceWorker';
-
-//ReactDOM.render(<App />, document.getElementById('root'));//
-
-//// If you want your app to work offline and load faster, you can change
-//// unregister() to register() below. Note this comes with some pitfalls.
-//// Learn more about service workers: https://bit.ly/CRA-PWA
-//serviceWorker.unregister();
 
 const store = createStore(rootReducer, applyMiddleware(thunk));
 
 const Root = ({ store }) => (
   <Provider store={store}>
     <Router>
-    	<NavBar />
-      <Route exact path="/" component={App} />
-      <Route exact path="/products" component={ProductsContainer} />
-      <Route exact path="/keyterms" component={KeyTermList} />
-      <Route exact path="/logout" component={Logout} />
+	    <NavBar />
+	    <Route exact path="/" component={App} />
+	    <Route exact path="/products" component={ProductsContainer} />
+	    <Route exact path="/keyterms" component={KeyTermList} />
+	    <Route exact path="/logout" component={Logout} />
     </Router>
   </Provider>
 )
