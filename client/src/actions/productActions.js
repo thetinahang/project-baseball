@@ -15,10 +15,9 @@ export const fetchProducts = () => {
   }
 }; 
 
-// confirm the right url
-export const addProduct = product => {
+export const addProduct = (user_id, product) => {
   return dispatch => {
-    fetch('/products', {
+    fetch(`http://localhost:3001/api/users/${user_id}/products`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
