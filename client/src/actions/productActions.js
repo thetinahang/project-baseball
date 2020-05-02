@@ -15,34 +15,17 @@ export const fetchProducts = () => {
   }
 }; 
 
-
-export function addProduct(product) {
-  console.log(createUrl({id:1}))
-  let body = JSON.stringify(
-    {
-      product: {
-        name: product.name, 
-        description: product.description, 
-        user_id: 1
-      }
-    }
-  )
-
-  return (dispatch) => {
-    dispatch({ type: 'ADD_PRODUCT' })
-    fetch(createUrl({id:1},
-      {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: body
-      }
-    ))
-      .then(response => response.json())
-      .then(product => dispatch({type:'ADD_PRODUCT', payload: product}))
-      //.then(json => console.log(json['data']))
-      .catch(error => console.log(error))
-    //then(products => {dispatch({ type: 'FETCH_PRODUCTS', products: products })})
+// confirm the right url
+export const addProduct = product => {
+  return dispatch => {
+    fetch('/products', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
+      },
+      body: JSON.stringify(product)
+    }).then(resp => resp.json())
+      .then(json => dispatch({type: 'ADD_PRODUCT', product: json}));
   }
-}; 
+};
