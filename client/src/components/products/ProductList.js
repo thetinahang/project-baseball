@@ -6,11 +6,11 @@ import Product from '../products/Product';
 
 class ProductList extends Component {
 
-  componentDidMount() {
-    console.log('from mount')
-    console.log(this.props)
-    this.props.fetchProducts()
-  }
+	componentDidMount() {
+	  console.log('from mount')
+	  console.log(this.props)
+	  this.props.fetchProducts()
+	}
 
 	render() {
 		console.log('from product list render')
@@ -18,16 +18,24 @@ class ProductList extends Component {
 
 		const { products } = this.props.products
 		
-		return (
-			<div align="center">
-			<h1>Here are your products:</h1>
-			<Grid container direction="row" justify="center" alignItems="center" >
-				{products.map(product =>
-					<Product product={product['attributes']} key={product.id}/>
-				)}
-			</Grid>
-			</div>
-	)
+		if (products) {
+			return (
+				<div align="center">
+					<h1>Here are your products:</h1>
+					<Grid container direction="row" justify="center" alignItems="center" >
+						{products.map(product =>
+							<Product product={product['attributes']} key={product.id}/>
+						)}
+					</Grid>
+				</div>
+			)
+		} else {
+			return (
+				<div align="center">
+				</div>
+			)
+		}
+
 	};
 }
 
