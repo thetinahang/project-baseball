@@ -9,7 +9,7 @@ class ProductList extends Component {
 	componentDidMount() {
 	  console.log('from mount')
 	  console.log(this.props)
-	  this.props.fetchProducts()
+	  this.props.fetchProducts(4)
 	}
 
 	render() {
@@ -48,7 +48,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    fetchProducts: () => dispatch(fetchProducts())
+    fetchProducts: () => dispatch(fetchProducts(4))
   }
 }
 

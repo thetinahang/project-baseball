@@ -4,14 +4,14 @@ import ProductInput from '../components/products/ProductInput'
 import ProductList from '../components/products/ProductList'
 
 class ProductsContainer extends Component {
-  render() {
-    return(
-      <div>
-        <ProductInput addProduct={this.props.addProduct}/>
-        <ProductList products={this.props.products}/>
-      </div>
-    )
-  }
+	render() {
+		return(
+			<div>
+				<ProductInput addProduct={this.props.addProduct}/>
+				<ProductList products={this.props.products}/>
+			</div>
+		)
+	}
 }
 
 const mapStateToProps = ({ products }) => ({ products })

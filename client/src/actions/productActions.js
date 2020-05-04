@@ -1,13 +1,32 @@
 export const fetchProducts = (userId) => {
+  console.log('from fetchproducts')
+  console.log(userId);
+  const token = localStorage.getItem("token")
     return (dispatch) => {
       dispatch({ type: 'LOADING_PRODUCTS' })
       // need to replace the user id in this request
-      fetch(`http://localhost:3001/users/1/products`)
-        .then(response => response.json())
-        .then(json => dispatch({ type: 'FETCH_PRODUCTS', products: json['data'] }))
-        .catch(error => console.log(error))
+      fetch(`http://localhost:3001/users/${userId}/products`, {
+        headers: {
+          "Authorization": `Bearer ${token}`
+        }        
+      })
+      .then(response => response.json())
+      .then(json => console.log(json))
+      //.then(json => dispatch({ type: 'FETCH_PRODUCTS', products: json['data'] }))
+      .catch(error => console.log(error))
     }
 }
+
+//  const handleAuthClick = () => {
+//    const token = localStorage.getItem("token")
+//    fetch(`http://localhost:3001/user_is_authed`, {
+//      headers: {
+//        "Authorization": `Bearer ${token}`
+//      }
+//    })
+//    .then(resp => resp.json())
+//    .then(data => console.log(data))
+//  }
 
 export const addProduct = (userId, product) => {
   return dispatch => {
