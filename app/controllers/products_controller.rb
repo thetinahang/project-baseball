@@ -1,6 +1,5 @@
 class ProductsController < ApplicationController
 	def index
-		binding.pry
 		@user = User.find(params[:user_id])
 		if @user.present? && @user == session_user
 			@products = @user.products
