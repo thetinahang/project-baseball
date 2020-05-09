@@ -109,6 +109,7 @@ import './App.css';
 import Header from './Header'
 import SignInForm from './SignInForm';
 import LoginForm from './LoginForm'
+import { Link } from 'react-router-dom';
 
 function App() {
   const [user, setUser] = useState({})
@@ -165,7 +166,8 @@ function App() {
         {
           renderForm()
         }
-        <button onClick={handleAuthClick} className="ui button">Access Authorized Route</button>
+        <button onClick={handleAuthClick} className="ui button">Access Authorized Route</button><br/>
+        <Link to="/products">Products</Link>
     </div>
   );
 }

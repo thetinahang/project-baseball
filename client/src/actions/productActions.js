@@ -11,8 +11,8 @@ export const fetchProducts = (userId) => {
         }        
       })
       .then(response => response.json())
-      .then(json => console.log(json))
-      //.then(json => dispatch({ type: 'FETCH_PRODUCTS', products: json['data'] }))
+      //.then(json => console.log(json))
+      .then(json => dispatch({ type: 'FETCH_PRODUCTS', products: json['data'] }))
       .catch(error => console.log(error))
     }
 }
