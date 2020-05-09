@@ -29,7 +29,7 @@ class ProductInput extends Component {
     return(
       <div>
         <form onSubmit={this.handleSubmit}>
-          <h1>Add a Product:</h1>
+          <h1>Add a New Product:</h1>
           <label>Name: </label><input type="text" name="name"onChange={this.handleChange} /><br/>
           <label>Description: </label><input type="text" name="description" onChange={this.handleChange} /><br/>
           <label>User ID: </label><input type="text" name="user_id" onChange={this.handleChange} /><br/>

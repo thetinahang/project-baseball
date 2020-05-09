@@ -7,8 +7,8 @@ class ProductsContainer extends Component {
 	render() {
 		return(
 			<div>
-				<ProductInput addProduct={this.props.addProduct}/>
 				<ProductList products={this.props.products}/>
+				<ProductInput addProduct={this.props.addProduct}/>
 			</div>
 		)
 	}
