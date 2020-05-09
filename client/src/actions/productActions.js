@@ -28,17 +28,26 @@ export const fetchProducts = (userId) => {
 //    .then(data => console.log(data))
 //  }
 
-export const addProduct = (userId, product) => {
-  return dispatch => {
+export const addProduct = (product) => {
+  console.log('from addproduct')
+  console.log(product)
+  const userId = parseInt(product.user_id)
+  const token = localStorage.getItem("token")
+  return (dispatch) => {
     fetch(`http://localhost:3001/users/${userId}/products`, {
       method: 'POST',
       headers: {
+        "Authorization": `Bearer ${token}`,
         'Content-Type': 'application/json',
         'Accept': 'application/json'
       },
-      body: JSON.stringify(product)
+      body: JSON.stringify({'product': {
+        name: product.name,
+        description: product.description,
+        user_id: userId
+      }})
     }).then(resp => resp.json())
-      .then(json => dispatch({type: 'ADD_PRODUCT', product: json}));
+      .then(json => dispatch({type: 'ADD_PRODUCT', product: json['data'] }));
   }
 };
 

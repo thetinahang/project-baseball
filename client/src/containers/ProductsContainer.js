@@ -5,6 +5,8 @@ import ProductList from '../components/products/ProductList'
 
 class ProductsContainer extends Component {
 	render() {
+		console.log('from products container')
+		console.log(this.props)
 		return(
 			<div>
 				<ProductList products={this.props.products}/>

@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { addProduct } from '../../actions/productActions';
 
 class ProductInput extends Component {
 
@@ -16,7 +18,6 @@ class ProductInput extends Component {
 
   handleSubmit = event => {
     event.preventDefault();
-    debugger
     this.props.addProduct(this.state);
     this.setState({
       name: '',
@@ -27,12 +28,12 @@ class ProductInput extends Component {
 
   render() {
     return(
-      <div>
+      <div align="center">
         <form onSubmit={this.handleSubmit}>
           <h1>Add a New Product:</h1>
-          <label>Name: </label><input type="text" name="name"onChange={this.handleChange} /><br/>
-          <label>Description: </label><input type="text" name="description" onChange={this.handleChange} /><br/>
-          <label>User ID: </label><input type="text" name="user_id" onChange={this.handleChange} /><br/>
+          <label>Name: </label><input type="text" name="name" value={this.state.name} onChange={this.handleChange} /><br/>
+          <label>Description: </label><input type="text" name="description" value={this.state.description} onChange={this.handleChange} /><br/>
+          <label>User ID: </label><input type="text" name="user_id" value={this.state.user_id} onChange={this.handleChange} /><br/>
           <input type="submit"/>
         </form>
       </div>
@@ -40,4 +41,4 @@ class ProductInput extends Component {
   }
 }
 
-export default ProductInput;
+export default connect(null, { addProduct })(ProductInput);
