@@ -8,6 +8,7 @@ import rootReducer from './reducers';
 import './index.css';
 import App from './App';
 import ProductsContainer from './containers/ProductsContainer';
+import KeyTermList from './containers/KeyTermList';
 
 const store = createStore(rootReducer, applyMiddleware(thunk));//
 
@@ -22,6 +23,7 @@ const Root = ({ store }) => (
 		<Router>
 			<Route exact path="/" component={App} />
 			<Route exact path="/products" component={ProductsContainer} />
+			<Route exact path="/keyterms" component={KeyTermList} />
 		</Router>
 	</Provider>
 );
