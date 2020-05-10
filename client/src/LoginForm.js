@@ -1,4 +1,5 @@
 import React, {useState} from 'react'
+import { withRouter } from 'react-router-dom';
 
 function LoginForm(props){
     const [email, setEmail] = useState("")
@@ -29,6 +30,11 @@ function LoginForm(props){
         .then(data => {
             localStorage.setItem("token", data.jwt)
             props.handleLogin(data.user)
+            console.log(data.user)
+            props.history.push({
+                pathname: '/products',
+                userId: data.user.id
+            })
         })
         setEmail("")
         setPassword("")
@@ -59,4 +65,4 @@ function LoginForm(props){
     )
 } 
 
-export default LoginForm;
+export default withRouter(LoginForm);

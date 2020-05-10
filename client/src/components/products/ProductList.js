@@ -7,9 +7,9 @@ import Product from '../products/Product';
 class ProductList extends Component {
 
 	componentDidMount() {
-	  console.log('from mount')
-	  console.log(this.props)
-	  this.props.fetchProducts(4)
+	  console.log('from product list mount')
+	  console.log(this.props.userId)
+	  this.props.fetchProducts(this.props.userId)
 	}
 
 	render() {
@@ -48,7 +48,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    fetchProducts: () => dispatch(fetchProducts(4))
+    fetchProducts: (userId) => dispatch(fetchProducts(userId))
   }
 }
 

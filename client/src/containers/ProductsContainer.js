@@ -9,7 +9,7 @@ class ProductsContainer extends Component {
 		console.log(this.props)
 		return(
 			<div>
-				<ProductList products={this.props.products}/>
+				<ProductList userId={this.props.location.userId}/>
 				<ProductInput addProduct={this.props.addProduct}/>
 			</div>
 		)
